@@ -1,6 +1,4 @@
-class Superhero:
-    
-    def __init__(self, name, alias, superpower, health=100, strength=50):
+ def __init__(self, name, alias, superpower, health=100, strength=50):
         self.name = name
         self.alias = alias
         self.superpower = superpower
@@ -53,3 +51,69 @@ print("\n")
 print(hero2.display_info())
 hero2.fly()
 hero2.attack(hero1)
+  
+
+
+
+
+  
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    
+    def move(self):
+        raise NotImplementedError("Subclasses must implement the move method")
+
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def move(self):
+        print(f"{self.name} is running! 🐕🏃‍♂️")
+
+
+class Bird(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def move(self):
+        print(f"{self.name} is flying! 🕊️✈️")
+
+
+class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
+
+    
+    def move(self):
+        raise NotImplementedError("Subclasses must implement the move method")
+
+
+class Car(Vehicle):
+    def __init__(self, brand):
+        super().__init__(brand)
+
+    def move(self):
+        print(f"The {self.brand} car is driving! 🚗💨")
+
+
+class Plane(Vehicle):
+    def __init__(self, brand):
+        super().__init__(brand)
+
+    def move(self):
+        print(f"The {self.brand} plane is flying! ✈️💨")
+
+
+dog = Dog("Buddy")
+bird = Bird("Skylar")
+car = Car("Toyota")
+plane = Plane("Boeing")
+
+
+dog.move()     
+bird.move()  
+car.move()     
+plane.move()   
